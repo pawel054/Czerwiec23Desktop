@@ -39,5 +39,31 @@ namespace AplikacjaDesktop
                 imageRodzaj.Source = new BitmapImage(new Uri("pack://application:,,,/AplikacjaDesktop;component/Images/paczka.png"));
             }
         }
+
+        private void SubmitClick(object sender, RoutedEventArgs e)
+        {
+            string postCode = txtPostCode.Text;
+            bool isValid = true;
+            if(postCode.Length < 5 || postCode.Length > 5)
+            {
+                MessageBox.Show("Nieprawidłowa liczba cyfr w kodzie pocztowym");
+                isValid = false;
+            }
+
+            foreach(var item in postCode)
+            {
+                if(!int.TryParse(item.ToString(), out var test))
+                {
+                    MessageBox.Show("Kod pocztowy powinien się składać z samych cyfr");
+                    isValid = false;
+                    continue;
+                }
+            }
+
+            if (isValid)
+            {
+                MessageBox.Show("Dane przesyłki zostały wprowadzone");
+            }
+        }
     }
 }
