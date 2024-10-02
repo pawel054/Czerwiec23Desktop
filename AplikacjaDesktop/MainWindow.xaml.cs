@@ -20,5 +20,24 @@ namespace AplikacjaDesktop
         {
             InitializeComponent();
         }
+
+        private void CheckPriceClick(object sender, RoutedEventArgs e)
+        {
+            if(radioPocztowka.IsChecked == true)
+            {
+                labelCena.Content = "Cena: 1zł";
+                imageRodzaj.Source = new BitmapImage(new Uri("pack://application:,,,/AplikacjaDesktop;component/Images/pocztowka.png"));
+            }
+            else if(radioList.IsChecked == true)
+            {
+                labelCena.Content = "Cena: 1,5zł";
+                imageRodzaj.Source = new BitmapImage(new Uri("pack://application:,,,/AplikacjaDesktop;component/Images/list.png"));
+            }
+            else if(radioPaczka.IsChecked == true)
+            {
+                labelCena.Content = "Cena: 10zł";
+                imageRodzaj.Source = new BitmapImage(new Uri("pack://application:,,,/AplikacjaDesktop;component/Images/paczka.png"));
+            }
+        }
     }
 }
