@@ -8,4 +8,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\list.png" />
+    <None Remove="Images\paczka.png" />
+    <None Remove="Images\pocztowka.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\list.png" />
+    <Resource Include="Images\paczka.png" />
+    <Resource Include="Images\pocztowka.png" />
+  </ItemGroup>
+
 </Project>
